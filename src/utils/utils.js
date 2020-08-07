@@ -1,7 +1,7 @@
 import React from 'react';
 import numeral from 'numeral';
 import {Circle, Popup} from "react-leaflet";
-
+import './utils.css';
 
 const casesTypeColors = {
     cases: {
@@ -13,14 +13,16 @@ const casesTypeColors = {
       multiplier: 1200,
     },
     deaths: {
-      hex: "#fb4443",
+      hex: "#424242",
       multiplier: 2000,
     },
   };
 
 
 
-//Global
+// ============ Global ============ 
+
+//return data sorted by highest to lower 
 export const sortData = (data)=>{
 
     const sortedData = [...data];
@@ -28,12 +30,13 @@ export const sortData = (data)=>{
 
 }
 
-
+//handle all the API request that the app needs
 export const API_CALL = {
     getWorldInformation : "https://disease.sh/v3/covid-19/all",
     getCountries        : "https://disease.sh/v3/covid-19/countries",
     getHistoricalData   : "https://disease.sh/v3/covid-19/historical/all?lastdays=120"
 }
+
 
 //Draw Circles on map
 export const showDataOnMap = (data, casesType = "cases") =>
@@ -47,6 +50,7 @@ export const showDataOnMap = (data, casesType = "cases") =>
       radius={
         Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
       }
+      className="circle-on-map"
     >
       <Popup>
         <div className="info-container">
@@ -68,3 +72,7 @@ export const showDataOnMap = (data, casesType = "cases") =>
       </Popup>
     </Circle>
     ));
+
+//Format value to another more readable
+export const prettify = (stat) =>
+  stat ? `+${numeral(stat).format("0.0a")}` : "+0";

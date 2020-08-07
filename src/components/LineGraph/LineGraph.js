@@ -55,36 +55,35 @@ const options = {
     },
 };
 
+const buildChartData = (data, casesType) => {
 
-export default function LineGraph({ casesType="cases" }) {
+  let chartData = [];
+  let lastDataPoint;
+
+ 
+  for(let date in data.cases){
+      
+      if(lastDataPoint){
+          const newDataPont = {
+              x : date,
+              y : data[casesType][date] - lastDataPoint
+          }
+
+          
+          chartData.push(newDataPont);
+      }
+
+      lastDataPoint = data[casesType][date];
+
+  }
+
+  return chartData;
+}
+
+
+export default function LineGraph({ casesType }) {
 
     const [data, setData] = useState({})
-
-
-    const buildChartData = (data, casesType) => {
-
-        const chartData = [];
-        let lastDataPoint;
-
-       
-        for(let date in data.cases){
-            
-            if(lastDataPoint){
-                const newDataPont = {
-                    x : date,
-                    y : data[casesType][date] - lastDataPoint
-                }
-
-                
-                chartData.push(newDataPont);
-            }
-
-            lastDataPoint = data[casesType][date];
-
-        }
-
-        return chartData;
-    }
 
 
     useEffect(()=>{
@@ -93,7 +92,7 @@ export default function LineGraph({ casesType="cases" }) {
             await fetch(API_CALL.getHistoricalData)
             .then(result => result.json())
             .then( (data) => {
-                const chartData = buildChartData(data, 'cases');
+                const chartData = buildChartData(data, casesType);
                 setData(chartData);
             });
         }
@@ -101,6 +100,7 @@ export default function LineGraph({ casesType="cases" }) {
         fetchData()
         
     }, [casesType])
+
 
     return (
         
