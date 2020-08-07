@@ -73,6 +73,7 @@ export const showDataOnMap = (data, casesType = "cases") =>
     </Circle>
     ));
 
+
 //Format value to another more readable
 export const prettify = (stat) =>
-  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+  stat ? `+${numeral(stat).format("0,0")}` : "+0";

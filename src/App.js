@@ -95,7 +95,7 @@ function App() {
         <div className="app__header">
 
           <h1>COVID Tracker</h1>
-          <h4>Information about: {country}</h4>
+          <h4>Information about: {countryInfo.country}</h4>
 
           <FormControl className="app__dropdown">
             <Select variant="outlined" value={country} onChange={onCountrySelect}>
@@ -147,8 +147,9 @@ function App() {
         </div>
 
         <Map casesType={casesType}  countries={mapCountries} center={mapCenter} zoom={mapZoom}/>
-
-        <AdvanceInfo></AdvanceInfo>
+        
+        {/* Show Advance Info about the selected country, info like testsPerDay for example */}
+        <AdvanceInfo country={countryInfo.country} data={countryInfo}></AdvanceInfo>
 
       </main>
 

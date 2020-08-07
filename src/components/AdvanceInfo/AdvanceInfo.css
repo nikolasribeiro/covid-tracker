@@ -1,0 +1,32 @@
+.AdvanceInfo__container{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-top: 16px;
+    box-shadow: 0 0 8px -4px rgba(0,0,0,0.5);
+}
+
+
+#AdvanceInfo__title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.AdvanceInfo__table tr{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.key__table{
+    color: #6a5d5d;
+}
+
+.value__table{
+    color: #CC1034;
+}
+
+.AdvanceInfo__table tr:nth-of-type(odd){
+    background-color: #f3f2f8;
+}
