@@ -16,7 +16,7 @@
 
 .selected{
     transition: all 800ms ease;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .infected{
@@ -41,4 +41,11 @@
 
 .infobox:hover{
     cursor: pointer;
+}
+
+/* Media Query */
+@media (max-width: 768px){
+    .selected{
+        transform: scale(1.02);
+    }
 }

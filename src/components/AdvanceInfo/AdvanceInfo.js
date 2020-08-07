@@ -7,7 +7,7 @@ export default function AdvanceInfo({country, ...data}) {
     return (
         
         <div className="AdvanceInfo__container">
-            <h2 id="AdvanceInfo__title">Advance Info about {country}</h2>
+            <h2 id="AdvanceInfo__title">More Info about {country}</h2>
             
             <div className="AdvanceInfo__table">
 

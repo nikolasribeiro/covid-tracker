@@ -92,6 +92,7 @@ export default function LineGraph({ casesType }) {
             await fetch(API_CALL.getHistoricalData)
             .then(result => result.json())
             .then( (data) => {
+
                 const chartData = buildChartData(data, casesType);
                 setData(chartData);
             });

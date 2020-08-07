@@ -1,0 +1,19 @@
+.vaccine_status___container{
+    margin-top: 20px;
+
+}
+
+
+.vaccine_status___container th,
+.vaccine_status___container tr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vaccine_status___container th{
+    margin-bottom: 15px;
+}
+
+.vaccine_status___container tr:nth-of-type(odd){
+    background-color: #f3f2f8;
+}

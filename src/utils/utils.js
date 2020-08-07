@@ -34,7 +34,8 @@ export const sortData = (data)=>{
 export const API_CALL = {
     getWorldInformation : "https://disease.sh/v3/covid-19/all",
     getCountries        : "https://disease.sh/v3/covid-19/countries",
-    getHistoricalData   : "https://disease.sh/v3/covid-19/historical/all?lastdays=120"
+    getHistoricalData   : "https://disease.sh/v3/covid-19/historical/all?lastdays=120",
+    getVaccineStatus    : "https://disease.sh/v3/covid-19/vaccine"
 }
 
 

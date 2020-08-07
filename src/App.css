@@ -6,11 +6,34 @@ body{
     background-color: #f4f5fa;
 }
 
+.dark-theme{
+    background-color: #121212;
+}
+
 
 .app{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     padding: 20px;
+}
+
+.app .main-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.app .app__footer{
+    text-align: center;
+    color: gray;
+
+}
+
+.app .app__footer a{
+    text-decoration: none;
+    color: darkgrey;
 }
 
 .app__header{
@@ -24,12 +47,16 @@ body{
     flex:0.9;
 }
 
+
+
+
 .app__stats{
     display: flex;
     justify-content: space-between;
 }
 
-#graph__title{
+#graph__title,
+#vaccine__title{
     margin-top: 20px;
 }
 
@@ -37,7 +64,17 @@ body{
 
 /* Media Querys */
 @media (max-width: 990px){
-    .app{
+    .app .main-content{
+        flex-direction: column;
+    }
+
+    .app__stats{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 425px){
+    .app__header{
         flex-direction: column;
     }
 }
