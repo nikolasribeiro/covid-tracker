@@ -14,7 +14,7 @@ export default function InfoBox({title, cases, total, active, infected, recovere
                 {/* Cases */}
                 <h2 className="infobox__cases">{cases}</h2>
                 {/* Total */}
-                <Typography color="textSecondary" className="infobox__total">{total} total cases</Typography>
+                <Typography color="textSecondary" className="infobox__total">{total} new</Typography>
             </CardContent>
         </Card>
     )

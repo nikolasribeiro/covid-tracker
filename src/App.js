@@ -131,9 +131,9 @@ function App() {
             {/* Coronavirus Total Cases */}
             <InfoBox
               infected
-              title="New Cases"
-              total={prettify(countryInfo.cases)}
-              cases={prettify(countryInfo.todayCases)}
+              title="Cases"
+              total={prettify(countryInfo.todayCases)}
+              cases={prettify(countryInfo.cases)}
               onClick={e => setCasesType("cases")}
               active={casesType === "cases"}
             />
