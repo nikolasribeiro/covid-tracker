@@ -7,13 +7,13 @@ export default function VaccineStatus() {
     const [vaccinePhases, setVaccinePhases] = useState([]);
 
     //Get Vaccine Status
-    useEffect(()=>{
-        fetch(API_CALL.getVaccineStatus)
-          .then(result=>result.json())
-          .then(data=>{
-            setVaccinePhases(data['phases'])
-          })
-    },[])
+    // useEffect(()=>{
+        // fetch(API_CALL.getVaccineStatus)
+          // .then(result=>result.json())
+          // .then(data=>{
+            // setVaccinePhases(data['phases'])
+          // })
+    // },[])
 
 
     return (
